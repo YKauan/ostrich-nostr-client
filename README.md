@@ -1,0 +1,1 @@
+# ostrich-nostr-client
