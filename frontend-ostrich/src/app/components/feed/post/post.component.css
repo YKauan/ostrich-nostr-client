@@ -1,0 +1,194 @@
+.acoes {
+    display: flex;
+    justify-content: flex-end
+}
+
+.botao-excluir {
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.botao-editar {
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.post {
+    background-color: #6034fc;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.post .conteudo {
+    margin: 1rem auto;
+    word-wrap: break-word;
+    display: block;
+    position: relative;
+    white-space: normal;
+}
+
+.post .autoria {
+    word-wrap: break-word;
+}
+
+.header-post {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens (imagem e texto) no centro */
+}
+
+.author-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Deixa a div redonda */
+    overflow: hidden; /* Corta qualquer conteúdo fora da borda arredondada */
+    margin-right: 10px; /* Adiciona espaçamento à direita da imagem */
+}
+
+.author-avatar img {
+    width: 100%; /* A imagem vai ocupar toda a largura da div */
+    height: 100%; /* A imagem vai ocupar toda a altura da div */
+    object-fit: cover; /* Faz com que a imagem seja ajustada sem distorção, preenchendo a área */
+}
+
+.autoria {
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    line-height: 1.2; /* Espaçamento entre as linhas para melhorar a legibilidade */
+    color: #FFFFFF; /* Cor do texto */
+    margin: 0; /* Remove qualquer margem padrão */
+}
+
+.modelo1 {
+    box-shadow: 8px 8px 0px #154580;
+}
+
+.modelo2 {
+    box-shadow: 8px 8px 0px #6BD1FF;
+}
+
+.modelo3 {
+    box-shadow: 8px 8px 0px #84EEC1;
+}
+
+.post-size {
+    width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+    .post-size{
+        width: 100%;
+    }
+}
+
+.ver-mais {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 0;
+    text-align: left;
+    display: block;
+    margin-top: 5px;
+}
+  
+.ver-mais:hover {
+    text-decoration: underline;
+}
+  
+.post .conteudo.expanded {
+    white-space: normal; /* Permite que o texto ocupe várias linhas */
+}
+  
+
+.truncated {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.images-container {
+    margin-top: 20px;
+}
+
+.images-container img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.videos-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin-top: 10px;
+}
+
+.links-container {
+    margin-top: 20px;
+}
+
+.highlight-link {
+    color: yellow;
+    text-decoration: underline;
+}
+
+/* Botão de alternância ao lado do título */
+.toggle-section-btn {
+    background: none;
+    border: none;
+    color: inherit; /* Mantém a cor do texto */
+    font-size: inherit; /* Mantém o tamanho da fonte */
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px; /* Espaçamento entre o título e o botão */
+    font-weight: bold;
+}
+
+/* Estilo para a exibição das imagens */
+.images-container {
+    margin-top: 20px;
+}
+
+.images-container img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Estilo para a exibição dos vídeos */
+.videos-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin-top: 10px;
+}
+  
+/* Estilo para os links */
+.links-container {
+    margin-top: 20px;
+}
+
+.links-container .highlight-link {
+    color: yellow;
+    text-decoration: underline;
+    word-wrap: break-word; /* Permite quebra de linha dentro do link, se necessário */
+}
+  
+/* Estilo para as tags */
+.tags-container {
+  margin-top: 20px;
+  display: flex; /* Para exibir as tags lado a lado */
+  flex-wrap: wrap; /* Permite que as tags que não couberem na linha atual sejam movidas para a próxima linha */
+}
+  
+.tags-container .tag {
+    color: green;
+    font-weight: bold;
+}

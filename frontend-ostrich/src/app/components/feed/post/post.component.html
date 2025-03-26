@@ -1,0 +1,89 @@
+<div class="post modelo1 ff-roboto-mono post-size">
+    <div class="header-post">
+        <div class="author-avatar">
+            <img src="{{ post.authorImage }}" alt="Imagem autor">
+        </div>
+        <p class="autoria"><b>{{ post.authorName}}  • {{ formatDate(post.timestamp) }}</b></p>
+    </div>
+
+    <p class="conteudo" [ngClass]="{'expanded': isContentExpanded}">
+        <!-- Exibindo conteúdo com links destacados em amarelo -->
+        <span *ngIf="!isContentExpanded" class="truncated">{{ post.content | slice:0:400 }}</span>
+        <span *ngIf="isContentExpanded">{{ post.content }}</span>
+    </p>  
+    
+    <!-- Exibe o botão apenas se o conteúdo tiver mais de 400 caracteres -->
+    <button *ngIf="post.content.length > 400" (click)="toggleContent()" class="ver-mais">
+        {{ isContentExpanded ? 'Ver menos' : 'Ver mais' }}
+    </button>
+
+    <!-- Exibindo as imagens extraídas -->
+    <div *ngIf="images.length > 0">
+        <div class="images-container">
+            <h4>Imagens 
+                <button (click)="toggleSection('images')" class="toggle-section-btn">
+                    {{ showImages ? '<' : '>' }}
+                </button>
+            </h4>
+            <div *ngIf="showImages">
+                <div *ngFor="let img of images">
+                    <img [src]="img" alt="Imagem" class="post-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exibindo vídeos extraídos -->
+    <div *ngIf="videos.length > 0">
+        <div class="videos-container">
+            <h4>Vídeos
+                <button (click)="toggleSection('videos')" class="toggle-section-btn">
+                    {{ showVideos ? '<' : '>' }}
+                </button>
+            </h4>
+            <div *ngIf="showVideos">
+                <div *ngFor="let video of videos">
+                    <iframe [src]="getVideoEmbedUrl(video)" frameborder="0" allowfullscreen class="post-video"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exibindo links genéricos -->
+    <div *ngIf="links.length > 0">
+        <div class="links-container">
+            <h4>Links
+                <button (click)="toggleSection('links')" class="toggle-section-btn">
+                    {{ showLinks ? '<' : '>' }}
+                </button>
+            </h4>
+            <div *ngIf="showLinks">
+                <div *ngFor="let link of links">
+                    <a [href]="link" target="_blank" class="highlight-link">{{ link }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exibindo tags extraídas -->
+    <div *ngIf="hashtags.length > 0">
+        <div *ngIf="showTags" class="tags-container">
+            <h4>Tags</h4>
+            <button (click)="toggleSection('tags')" class="toggle-section-btn">
+                {{ showTags ? '<' : '>' }}
+            </button>
+            <div *ngFor="let tag of hashtags" class="tag">
+                {{ tag }}
+            </div>
+        </div>
+    </div>
+
+    <div class="acoes">
+        <button class="botao-editar">
+          <img src="/assets/imagens/icone-editar.png" alt="Ícone de editar">
+        </button>
+        <button class="botao-excluir">
+          <img src="/assets/imagens/icone-excluir.png" alt="Ícone de excluir">
+        </button>
+    </div>
+</div>  

@@ -1,0 +1,22 @@
+.feed {
+    display: flex;
+    flex-direction: column; /* Coloca os itens um abaixo do outro */
+    align-items: center; /* Centraliza os itens na horizontal */
+    gap: 2rem;
+    margin: 1rem 0 2rem;
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+    background-color: #444444;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%; /* Garante que os elementos internos ocupem toda a largura */
+    max-width: 600px; /* Define um limite para não ficar muito largo */
+}
+ 
+.no-post {
+    text-align: center;
+    padding: 2rem 0 5rem;
+}

@@ -1,0 +1,15 @@
+ <section class="container">
+  <header class="header d-flex">
+    <h2 class="ff-inter">Feed</h2>
+  </header>
+  <div class="feed" *ngIf="feedData.length > 0, else noPost">
+    <div *ngFor="let post of feedData">
+      <app-post [post]="post"></app-post>
+    </div>
+  </div>
+</section>
+<ng-template #noPost>
+  <div class="ff-inter no-post">
+    <p>Ainda não há posts publicados!</p>
+  </div>
+</ng-template>
